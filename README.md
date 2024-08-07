@@ -5,7 +5,7 @@
 
 ### Установка 
 
-Клонируйте репозиторий: git clone
+Клонируйте репозиторий: git clone git@github.com:TuverOn/Online_shop_hw_p4.git
 
 Установка зависимостей pyproject.toml
 
