@@ -72,3 +72,13 @@ def second_category():
             ),
         ],
     )
+
+
+@pytest.fixture
+def product_dict():
+    return {
+        "name": "Product 4",
+        "description": "Description of the product 4",
+        "price": 145.75,
+        "quantity": 23,
+    }
