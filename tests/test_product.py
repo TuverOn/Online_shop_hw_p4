@@ -27,3 +27,11 @@ def test_prod_price_property(capsys, first_product):
     assert message.out.strip() == "Цена не должна быть нулевая или орицательная"
     first_product.price = 756.57
     assert first_product.price == 756.57
+
+
+def test_product_str(first_product):
+    assert str(first_product) == "Product, 84.5 руб. Остаток: 10 шт."
+
+
+def test_product_add(first_product, second_product):
+    assert first_product + second_product == 6144.58
