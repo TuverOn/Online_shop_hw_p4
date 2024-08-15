@@ -24,9 +24,12 @@ class Category:
     def __str__(self):
         return f"{self.name}, количество продуктов: {len(self.__products)} шт."
 
-    def add_product(self, product: Product) -> Any:
-        self.__products.append(product)
-        Category.product_count += 1
+    def add_product(self, products: Product) -> Any:
+        if isinstance(products, Product):
+            self.__products.append(products)
+            Category.product_count += 1
+        else:
+            raise TypeError
 
     @property
     def get_product_list(self) -> str:
@@ -34,3 +37,10 @@ class Category:
         for product in self.__products:
             product_list += f"{str(product)}\n"
         return product_list
+
+    @property
+    def products(self) -> list:
+        products_list = []
+        for product in self.__products:
+            products_list.append(product)
+        return products_list
