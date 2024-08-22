@@ -138,3 +138,12 @@ def smartphone2():
         memory=512,
         color="Gray space",
     )
+
+
+@pytest.fixture
+def category_without_products():
+    return Category(
+        name="Category without products",
+        description="Description of the category without products",
+        products=[],
+    )
