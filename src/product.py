@@ -1,4 +1,8 @@
-class Product:
+from src.base_product import BaseProduct
+from src.mixin_print import MixinPrint
+
+
+class Product(BaseProduct, MixinPrint):
     """Продукт"""
 
     name: str
