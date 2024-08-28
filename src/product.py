@@ -1,4 +1,8 @@
-class Product:
+from src.base_product import BaseProduct
+from src.mixin_print import MixinPrint
+
+
+class Product(BaseProduct, MixinPrint):
     """Продукт"""
 
     name: str
@@ -11,6 +15,10 @@ class Product:
         self.description = description
         self.__price = price
         self.quantity = quantity
+        if self.quantity >= 1:
+            self.quantity = quantity
+        else:
+            raise ValueError("Товар с нулевым количеством не может быть добавлен")
         super().__init__()
 
     def __str__(self):

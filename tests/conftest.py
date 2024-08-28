@@ -3,7 +3,7 @@ import pytest
 from src.category import Category
 from src.lawn_grass_product import LawnGrass
 from src.product import Product
-from src.smarthone_product import Smartphone
+from src.smartphone_product import Smartphone
 
 
 @pytest.fixture
@@ -137,4 +137,13 @@ def smartphone2():
         model="15",
         memory=512,
         color="Gray space",
+    )
+
+
+@pytest.fixture
+def category_without_products():
+    return Category(
+        name="Category without products",
+        description="Description of the category without products",
+        products=[],
     )

@@ -45,3 +45,8 @@ def test_add_product(first_category, smartphone1, lawn_grass1):
 def test_add_product_error(first_category):
     with pytest.raises(TypeError):
         first_category.add_product(1)
+
+
+def test_middle_price(first_category, category_without_products):
+    assert first_category.middle_price() == 120.185
+    assert category_without_products.middle_price() == 0
